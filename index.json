@@ -1,0 +1,324 @@
+{
+  "format": 1,
+  "title": {
+    "en": "dsh-pm-plugin",
+    "zh": "dsh-pm-plugin"
+  },
+  "description": {
+    "en": "A small, hand-curated index of DeepSeek Harness plugin bundles, hosted on GitHub Pages.",
+    "zh": "托管在 GitHub Pages 上的 DeepSeek Harness 插件索引，首期收录 4 个社区插件。"
+  },
+  "metadata": {
+    "categories": {
+      "agents": {
+        "title": {
+          "en": "Agents",
+          "zh": "智能体"
+        }
+      },
+      "context": {
+        "title": {
+          "en": "Context",
+          "zh": "上下文"
+        }
+      },
+      "interface": {
+        "title": {
+          "en": "Interface & GenUI",
+          "zh": "界面与生成式 UI"
+        }
+      },
+      "fun": {
+        "title": {
+          "en": "Fun",
+          "zh": "趣味"
+        }
+      }
+    },
+    "labels": {
+      "web-ui": {
+        "title": {
+          "en": "Web UI",
+          "zh": "Web 界面"
+        }
+      },
+      "feishu": {
+        "title": {
+          "en": "Feishu",
+          "zh": "飞书集成"
+        }
+      },
+      "official-prototype": {
+        "title": {
+          "en": "Built on official prototype",
+          "zh": "基于官方原型"
+        }
+      },
+      "release-tgz": {
+        "title": {
+          "en": "Release .tgz download",
+          "zh": "Release tgz 分发"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-superagent-general",
+      "title": {
+        "en": "SuperAgent",
+        "zh": "SuperAgent 通用智能体"
+      },
+      "description": {
+        "en": "A general-purpose SuperAgent adapted from the official prototype, with isolated DSH worker sessions.",
+        "zh": "基于官方原型的通用智能体，统一接收消息，在独立 DSH 会话中并发执行任务。"
+      },
+      "icon": "icons/superagent.svg",
+      "author": "comeonzhj",
+      "homepage": "https://github.com/comeonzhj/SuperAgent-General#readme",
+      "repository": {
+        "url": "https://github.com/comeonzhj/SuperAgent-General"
+      },
+      "metadata": {
+        "category": "agents",
+        "labels": [
+          "official-prototype",
+          "feishu",
+          "web-ui",
+          "release-tgz"
+        ],
+        "keywords": [
+          "dsh",
+          "superagent",
+          "agent",
+          "feishu",
+          "worker-sessions"
+        ]
+      },
+      "versions": [
+        {
+          "version": "0.2.2",
+          "publishTimestamp": 1793867904,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/comeonzhj/SuperAgent-General",
+            "commit": "aedd8ffbc36d465e6351e91ac82d8a1cc0cfe23d"
+          },
+          "engines": {
+            "dsh": "^0.2.1-alpha.2 || ^0.2.2-alpha.3"
+          }
+        },
+        {
+          "version": "0.2.1",
+          "publishTimestamp": 1793846216,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/comeonzhj/SuperAgent-General",
+            "commit": "1a201abd1c107e54fff35b8dbc5df11a5c1fc878"
+          },
+          "engines": {
+            "dsh": "^0.2.1-alpha.2 || ^0.2.2-alpha.3"
+          }
+        },
+        {
+          "version": "0.2.0",
+          "publishTimestamp": 1793780189,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/comeonzhj/SuperAgent-General",
+            "commit": "325c1837997a5593a10b721fd0a824cf2f0d183a"
+          },
+          "engines": {
+            "dsh": "^0.2.1-alpha.2 || ^0.2.2-alpha.3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dsh-prompt-breaker",
+      "title": {
+        "en": "Prompt breaker",
+        "zh": "提示词打砖块"
+      },
+      "description": {
+        "en": "Turns each prompt into a brick wall and fires one shot per agent tool call.",
+        "zh": "把你的提示词砌成砖墙，Agent 每调用一次工具就随机射碎一个字符。"
+      },
+      "icon": "icons/prompt-breaker.svg",
+      "author": "comeonzhj",
+      "homepage": "https://github.com/comeonzhj/dsh-prompt-breaker#readme",
+      "repository": {
+        "url": "https://github.com/comeonzhj/dsh-prompt-breaker"
+      },
+      "metadata": {
+        "category": "fun",
+        "labels": [
+          "web-ui"
+        ],
+        "keywords": [
+          "dsh",
+          "arcade",
+          "brick-breaker",
+          "ui"
+        ]
+      },
+      "versions": [
+        {
+          "version": "1.1.0",
+          "publishTimestamp": 1794216313,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/comeonzhj/dsh-prompt-breaker",
+            "commit": "b7d9a9b5298f0915d38e41482e63f4d7eeedb0f3"
+          },
+          "engines": {
+            "dsh": "*"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dsh-genui",
+      "title": {
+        "en": "GenUI",
+        "zh": "GenUI 生成式界面"
+      },
+      "description": {
+        "en": "Interactive charts, forms, calculators, dashboards and mini apps rendered inline in assistant replies, with actions that flow back to the model.",
+        "zh": "在助手回复中内联渲染交互式图表、表单、计算器、仪表盘与迷你应用，操作可回传给模型。"
+      },
+      "icon": "icons/genui.svg",
+      "author": "lhuans",
+      "homepage": "https://lhuans.github.io/dsh-genui/",
+      "repository": {
+        "url": "https://github.com/lhuans/dsh-genui"
+      },
+      "metadata": {
+        "category": "interface",
+        "labels": [
+          "web-ui"
+        ],
+        "keywords": [
+          "dsh",
+          "genui",
+          "generative-ui",
+          "charts",
+          "forms",
+          "dashboard",
+          "vue",
+          "opentiny"
+        ]
+      },
+      "dist-tags": {
+        "latest": "0.3.3"
+      },
+      "versions": [
+        {
+          "version": "0.3.3",
+          "publishTimestamp": 1793946542,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.3.0-0"
+          }
+        },
+        {
+          "version": "0.3.2",
+          "publishTimestamp": 1793775154,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.3.0-0"
+          }
+        },
+        {
+          "version": "0.3.1",
+          "publishTimestamp": 1791537182,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.3.0-0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dsh-context",
+      "title": {
+        "en": "Context",
+        "zh": "上下文"
+      },
+      "description": {
+        "en": "Context insights and management with a dashboard, browser, dynamics and /context command, for understanding how the context is composed and how it evolves.",
+        "zh": "上下文洞察与管理插件：提供跨会话的上下文仪表盘、上下文浏览器、上下文动态、/context 命令，看清上下文的构成与演变。"
+      },
+      "icon": "icons/context.svg",
+      "author": "bowenliang123",
+      "homepage": "https://github.com/bowenliang123/dsh-context",
+      "repository": {
+        "url": "https://github.com/bowenliang123/dsh-context"
+      },
+      "metadata": {
+        "category": "context",
+        "labels": [
+          "web-ui"
+        ],
+        "keywords": [
+          "dsh",
+          "context",
+          "token",
+          "dashboard",
+          "ui"
+        ]
+      },
+      "dist-tags": {
+        "latest": "0.83.0"
+      },
+      "versions": [
+        {
+          "version": "0.83.0",
+          "publishTimestamp": 1794159997,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1"
+          }
+        },
+        {
+          "version": "0.82.2",
+          "publishTimestamp": 1794050963,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1"
+          }
+        },
+        {
+          "version": "0.82.1",
+          "publishTimestamp": 1793957493,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1"
+          }
+        },
+        {
+          "version": "0.82.0",
+          "publishTimestamp": 1793872142,
+          "source": {
+            "type": "npm"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1"
+          }
+        }
+      ]
+    }
+  ]
+}

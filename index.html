@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>dsh-pm-plugin · DeepSeek Harness 插件索引</title>
+    <meta
+      name="description"
+      content="托管在 GitHub Pages 上的 DeepSeek Harness 插件市场索引（format 1）。"
+    />
+    <link rel="icon" href="icons/superagent.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #06080f;
+        --panel: #0c1220;
+        --panel-2: #101829;
+        --line: rgba(148, 163, 184, 0.14);
+        --line-strong: rgba(148, 163, 184, 0.28);
+        --text: #e9eef8;
+        --muted: #8d9ab1;
+        --teal: #5eead4;
+        --blue: #60a5fa;
+        --purple: #c084fc;
+        --gradient: linear-gradient(120deg, var(--teal), var(--blue) 52%, var(--purple));
+        --radius: 16px;
+        --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        background:
+          radial-gradient(900px 520px at 12% -8%, rgba(94, 234, 212, 0.12), transparent 60%),
+          radial-gradient(820px 480px at 88% -12%, rgba(192, 132, 252, 0.12), transparent 62%),
+          radial-gradient(700px 500px at 50% 120%, rgba(96, 165, 250, 0.08), transparent 60%),
+          var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+          "Microsoft YaHei", "Noto Sans", sans-serif;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      header.hero {
+        padding: 72px 0 48px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(12, 18, 32, 0.72);
+        color: var(--muted);
+        font-size: 12.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gradient);
+        box-shadow: 0 0 12px rgba(94, 234, 212, 0.7);
+      }
+
+      h1 {
+        margin: 22px 0 10px;
+        font-size: clamp(38px, 6vw, 60px);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        font-weight: 750;
+      }
+
+      h1 .grad {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .lede {
+        max-width: 720px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .index-url {
+        margin: 30px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .index-url code {
+        flex: 1 1 420px;
+        padding: 14px 16px;
+        border: 1px solid var(--line-strong);
+        border-radius: 12px;
+        background: rgba(7, 11, 20, 0.9);
+        color: var(--teal);
+        font-family: var(--mono);
+        font-size: 13.5px;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      button.copy {
+        padding: 14px 18px;
+        border: 1px solid var(--line-strong);
+        border-radius: 12px;
+        background: var(--panel-2);
+        color: var(--text);
+        font: inherit;
+        font-size: 14px;
+        cursor: pointer;
+        transition: border-color 0.15s ease, background 0.15s ease;
+      }
+
+      button.copy:hover {
+        border-color: var(--teal);
+        background: #142033;
+      }
+
+      button.copy.done {
+        border-color: var(--teal);
+        color: var(--teal);
+      }
+
+      section {
+        margin-top: 26px;
+      }
+
+      h2 {
+        margin: 0 0 6px;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+      }
+
+      h2 .count {
+        margin-left: 10px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .section-lede {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+
+      .step {
+        position: relative;
+        padding: 20px 20px 18px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(16, 24, 41, 0.9), rgba(10, 15, 26, 0.9));
+      }
+
+      .step .num {
+        display: inline-grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        margin-bottom: 12px;
+        border-radius: 9px;
+        background: rgba(94, 234, 212, 0.12);
+        border: 1px solid rgba(94, 234, 212, 0.3);
+        color: var(--teal);
+        font-family: var(--mono);
+        font-size: 13px;
+      }
+
+      .step h3 {
+        margin: 0 0 6px;
+        font-size: 15.5px;
+      }
+
+      .step p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13.5px;
+      }
+
+      kbd,
+      .chip {
+        display: inline-block;
+        padding: 1px 7px;
+        border: 1px solid var(--line-strong);
+        border-radius: 6px;
+        background: rgba(148, 163, 184, 0.08);
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--text);
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 0 0 20px;
+      }
+
+      .filter {
+        padding: 7px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--muted);
+        font: inherit;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .filter:hover {
+        color: var(--text);
+        border-color: var(--line-strong);
+      }
+
+      .filter.active {
+        color: #04110f;
+        background: var(--gradient);
+        border-color: transparent;
+        font-weight: 600;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(16, 24, 41, 0.92), rgba(9, 13, 23, 0.92));
+        transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: var(--line-strong);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      .card-head {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .card-head img {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: #0a1020;
+        padding: 3px;
+      }
+
+      .card-title {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.3;
+      }
+
+      .card-name {
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 12px;
+      }
+
+      .card-desc {
+        margin: 14px 0 0;
+        color: #b6c2d6;
+        font-size: 14px;
+        flex: 1 1 auto;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 16px;
+      }
+
+      .tag {
+        padding: 2px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(148, 163, 184, 0.07);
+        color: var(--muted);
+        font-size: 11.5px;
+      }
+
+      .tag.cat {
+        color: var(--teal);
+        border-color: rgba(94, 234, 212, 0.28);
+        background: rgba(94, 234, 212, 0.07);
+      }
+
+      .card-meta {
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+        display: grid;
+        gap: 6px;
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+
+      .card-meta .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .card-meta .value {
+        color: #cbd5e6;
+        font-family: var(--mono);
+        font-size: 12px;
+        text-align: right;
+        overflow-wrap: anywhere;
+      }
+
+      .card-links {
+        display: flex;
+        gap: 16px;
+        margin-top: 14px;
+        font-size: 13px;
+      }
+
+      .notice {
+        margin-top: 22px;
+        padding: 16px 18px;
+        border: 1px solid rgba(250, 204, 21, 0.22);
+        border-radius: 12px;
+        background: rgba(250, 204, 21, 0.05);
+        color: #d8cba4;
+        font-size: 13.5px;
+      }
+
+      .notice strong {
+        color: #f4e3b2;
+      }
+
+      footer {
+        margin: 64px 0 40px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 22px;
+        justify-content: space-between;
+      }
+
+      .error {
+        padding: 18px;
+        border: 1px solid rgba(248, 113, 113, 0.35);
+        border-radius: 12px;
+        background: rgba(248, 113, 113, 0.07);
+        color: #fca5a5;
+        font-size: 14px;
+      }
+
+      .skeleton {
+        height: 220px;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        background: linear-gradient(100deg, rgba(16, 24, 41, 0.6) 30%, rgba(30, 41, 59, 0.6) 50%, rgba(16, 24, 41, 0.6) 70%);
+        background-size: 220% 100%;
+        animation: shimmer 1.4s infinite linear;
+      }
+
+      @keyframes shimmer {
+        from {
+          background-position: 180% 0;
+        }
+        to {
+          background-position: -40% 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .skeleton,
+        .card {
+          animation: none;
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hero">
+        <span class="eyebrow"><span class="dot"></span>DeepSeek Harness · Plugin Index</span>
+        <h1><span class="grad">dsh-pm-plugin</span></h1>
+        <p class="lede">
+          托管在 GitHub Pages 上的 DeepSeek Harness 插件市场索引（<code>format: 1</code>）。把它添加为索引源，
+          即可在 DSH 插件页的「发现」标签中浏览与安装收录的插件。
+        </p>
+        <div class="index-url">
+          <code id="index-url">https://comeonzhj.github.io/dsh-pm-plugin/index.json</code>
+          <button class="copy" id="copy" type="button">复制索引 URL</button>
+        </div>
+      </header>
+
+      <section aria-labelledby="how">
+        <h2 id="how">如何添加索引源</h2>
+        <p class="section-lede">
+          索引是静态 JSON，DSH 直接读取；市场只负责展示与安装，不经过任何中间服务。
+        </p>
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <h3>打开自定义插件市场</h3>
+            <p>
+              插件页 → <strong>实验性插件</strong>旁的<strong>更多</strong> → 打开
+              <strong>自定义插件市场</strong>。之后会出现「发现」标签页。
+            </p>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <h3>添加索引源</h3>
+            <p>
+              进入「发现」→ <strong>添加索引源</strong> → 粘贴上面的索引 URL。每个索引源属于当前 profile。
+            </p>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <h3>浏览并安装</h3>
+            <p>
+              卡片显示推荐版本与来源；安装前请在确认框中核对 npm 包或 Git 提交，市场为第三方内容。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="plugins">
+        <h2 id="plugins">收录插件<span class="count" id="plugin-count"></span></h2>
+        <p class="section-lede">
+          首期收录 4 个插件。版本列表按需精选，均声明 DSH 兼容范围；完整字段见
+          <a href="index.json">index.json</a>。
+        </p>
+        <div class="toolbar" id="filters"></div>
+        <div class="grid" id="grid">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+        <div class="notice">
+          <strong>注意：</strong>市场列出的是各插件作者的声明，DSH 只校验索引格式，不验证标题、描述或来源。
+          SuperAgent 目前以 GitHub Release 预编译 <code>.tgz</code> 分发，索引中的 Git 源码版本安装时需要先构建，
+          建议优先从 <a href="https://github.com/comeonzhj/SuperAgent-General/releases">Releases</a> 下载安装包手动安装。
+        </div>
+      </section>
+
+      <footer>
+        <span>
+          <a href="https://github.com/comeonzhj/dsh-pm-plugin">github.com/comeonzhj/dsh-pm-plugin</a>
+          · MIT · 索引内容为第三方插件声明
+        </span>
+        <span>数据由 <a href="index.json">index.json</a> 实时渲染 · 格式参考
+          <a href="https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market">DSH 插件市场文档</a>
+        </span>
+      </footer>
+    </div>
+
+    <script>
+      const INDEX_URL = 'https://comeonzhj.github.io/dsh-pm-plugin/index.json'
+      const lang = (navigator.language || 'zh').toLowerCase().startsWith('zh') ? 'zh' : 'en'
+      const text = (value) => {
+        if (typeof value === 'string') return value
+        if (!value) return ''
+        return value[lang] ?? value.en ?? Object.values(value)[0] ?? ''
+      }
+      const escape = (value) =>
+        String(value ?? '').replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]))
+
+      const copyButton = document.getElementById('copy')
+      copyButton.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(INDEX_URL)
+        } catch {
+          const range = document.createRange()
+          range.selectNodeContents(document.getElementById('index-url'))
+          window.getSelection().removeAllRanges()
+          window.getSelection().addRange(range)
+          document.execCommand('copy')
+        }
+        copyButton.textContent = '已复制 ✓'
+        copyButton.classList.add('done')
+        setTimeout(() => {
+          copyButton.textContent = '复制索引 URL'
+          copyButton.classList.remove('done')
+        }, 1800)
+      })
+
+      const categoryTitles = new Map()
+      let activeCategory = 'all'
+
+      function renderCards(index) {
+        const grid = document.getElementById('grid')
+        const plugins = index.plugins.filter(
+          (plugin) => activeCategory === 'all' || plugin.metadata?.category === activeCategory,
+        )
+        document.getElementById('plugin-count').textContent = `${index.plugins.length} 个`
+
+        grid.innerHTML = plugins
+          .map((plugin) => {
+            const versions = plugin.versions.map((version) => version.version)
+            const latest = versions[0]
+            const source = plugin.versions[0].source.type
+            const category = plugin.metadata?.category
+            const labels = plugin.metadata?.labels ?? []
+            const tags = [
+              category ? `<span class="tag cat">${escape(categoryTitles.get(category) ?? category)}</span>` : '',
+              ...labels.map((label) => `<span class="tag">${escape(label)}</span>`),
+            ].join('')
+            const engines = plugin.versions[0].engines.dsh
+            return `
+              <article class="card">
+                <div class="card-head">
+                  <img src="${escape(plugin.icon)}" alt="" loading="lazy" />
+                  <div>
+                    <h3 class="card-title">${escape(text(plugin.title))}</h3>
+                    <div class="card-name">${escape(plugin.name)}</div>
+                  </div>
+                </div>
+                <p class="card-desc">${escape(text(plugin.description))}</p>
+                <div class="tags">${tags}</div>
+                <div class="card-meta">
+                  <div class="row"><span>作者</span><span class="value">${escape(plugin.author ?? '—')}</span></div>
+                  <div class="row"><span>版本</span><span class="value">${escape(latest)} · 收录 ${versions.length} 个</span></div>
+                  <div class="row"><span>来源</span><span class="value">${source === 'git' ? 'git · ' + escape(plugin.repository?.url ?? '') : 'npm'}</span></div>
+                  <div class="row"><span>DSH</span><span class="value">${escape(engines)}</span></div>
+                </div>
+                <div class="card-links">
+                  ${plugin.homepage ? `<a href="${escape(plugin.homepage)}">主页</a>` : ''}
+                  ${plugin.repository?.url ? `<a href="${escape(plugin.repository.url)}">源码</a>` : ''}
+                  ${plugin.repository?.url ? `<a href="${escape(plugin.repository.url)}/releases">发布</a>` : ''}
+                </div>
+              </article>`
+          })
+          .join('')
+
+        if (!plugins.length) grid.innerHTML = '<p class="section-lede">该分类下没有收录插件。</p>'
+      }
+
+      function renderFilters(index) {
+        const categories = index.metadata?.categories ?? {}
+        for (const [id, declaration] of Object.entries(categories)) categoryTitles.set(id, text(declaration.title))
+        const toolbar = document.getElementById('filters')
+        const buttons = [['all', '全部'], ...Object.entries(categories).map(([id, declaration]) => [id, text(declaration.title)])]
+        toolbar.innerHTML = buttons
+          .map(
+            ([id, label]) =>
+              `<button class="filter${id === 'all' ? ' active' : ''}" type="button" data-category="${escape(id)}">${escape(label)}</button>`,
+          )
+          .join('')
+        toolbar.addEventListener('click', (event) => {
+          const button = event.target.closest('button.filter')
+          if (!button) return
+          activeCategory = button.dataset.category
+          for (const candidate of toolbar.querySelectorAll('button.filter')) candidate.classList.toggle('active', candidate === button)
+          renderCards(index)
+        })
+      }
+
+      fetch('index.json', { cache: 'no-cache' })
+        .then((response) => {
+          if (!response.ok) throw new Error(`index.json: HTTP ${response.status}`)
+          return response.json()
+        })
+        .then((index) => {
+          renderFilters(index)
+          renderCards(index)
+        })
+        .catch((error) => {
+          document.getElementById('grid').innerHTML =
+            `<div class="error">无法加载 index.json：${escape(error.message)}。请直接访问 <a href="index.json">index.json</a>。</div>`
+        })
+    </script>
+  </body>
+</html>

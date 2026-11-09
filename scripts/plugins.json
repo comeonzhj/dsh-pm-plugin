@@ -1,0 +1,96 @@
+{
+  "market": {
+    "title": {
+      "en": "dsh-pm-plugin",
+      "zh": "dsh-pm-plugin"
+    },
+    "description": {
+      "en": "A small, hand-curated index of DeepSeek Harness plugin bundles, hosted on GitHub Pages.",
+      "zh": "托管在 GitHub Pages 上的 DeepSeek Harness 插件索引，首期收录 4 个社区插件。"
+    },
+    "metadata": {
+      "categories": {
+        "agents": { "title": { "en": "Agents", "zh": "智能体" } },
+        "context": { "title": { "en": "Context", "zh": "上下文" } },
+        "interface": { "title": { "en": "Interface & GenUI", "zh": "界面与生成式 UI" } },
+        "fun": { "title": { "en": "Fun", "zh": "趣味" } }
+      },
+      "labels": {
+        "web-ui": { "title": { "en": "Web UI", "zh": "Web 界面" } },
+        "feishu": { "title": { "en": "Feishu", "zh": "飞书集成" } },
+        "official-prototype": { "title": { "en": "Built on official prototype", "zh": "基于官方原型" } },
+        "release-tgz": { "title": { "en": "Release .tgz download", "zh": "Release tgz 分发" } }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-superagent-general",
+      "title": { "en": "SuperAgent", "zh": "SuperAgent 通用智能体" },
+      "description": {
+        "en": "A general-purpose SuperAgent adapted from the official prototype, with isolated DSH worker sessions.",
+        "zh": "基于官方原型的通用智能体，统一接收消息，在独立 DSH 会话中并发执行任务。"
+      },
+      "icon": "icons/superagent.svg",
+      "author": "comeonzhj",
+      "homepage": "https://github.com/comeonzhj/SuperAgent-General#readme",
+      "repository": { "url": "https://github.com/comeonzhj/SuperAgent-General" },
+      "category": "agents",
+      "labels": ["official-prototype", "feishu", "web-ui", "release-tgz"],
+      "keywords": ["dsh", "superagent", "agent", "feishu", "worker-sessions"],
+      "source": { "type": "git", "repo": "https://github.com/comeonzhj/SuperAgent-General" },
+      "versions": ["v0.2.2", "v0.2.1", "v0.2.0"]
+    },
+    {
+      "name": "dsh-prompt-breaker",
+      "title": { "en": "Prompt breaker", "zh": "提示词打砖块" },
+      "description": {
+        "en": "Turns each prompt into a brick wall and fires one shot per agent tool call.",
+        "zh": "把你的提示词砌成砖墙，Agent 每调用一次工具就随机射碎一个字符。"
+      },
+      "icon": "icons/prompt-breaker.svg",
+      "author": "comeonzhj",
+      "homepage": "https://github.com/comeonzhj/dsh-prompt-breaker#readme",
+      "repository": { "url": "https://github.com/comeonzhj/dsh-prompt-breaker" },
+      "category": "fun",
+      "labels": ["web-ui"],
+      "keywords": ["dsh", "arcade", "brick-breaker", "ui"],
+      "source": { "type": "git", "repo": "https://github.com/comeonzhj/dsh-prompt-breaker" },
+      "versions": ["v1.1.0"]
+    },
+    {
+      "name": "dsh-genui",
+      "title": { "en": "GenUI", "zh": "GenUI 生成式界面" },
+      "description": {
+        "en": "Interactive charts, forms, calculators, dashboards and mini apps rendered inline in assistant replies, with actions that flow back to the model.",
+        "zh": "在助手回复中内联渲染交互式图表、表单、计算器、仪表盘与迷你应用，操作可回传给模型。"
+      },
+      "icon": "icons/genui.svg",
+      "author": "lhuans",
+      "homepage": "https://lhuans.github.io/dsh-genui/",
+      "repository": { "url": "https://github.com/lhuans/dsh-genui" },
+      "category": "interface",
+      "labels": ["web-ui"],
+      "keywords": ["dsh", "genui", "generative-ui", "charts", "forms", "dashboard", "vue", "opentiny"],
+      "source": { "type": "npm", "package": "dsh-genui" },
+      "versions": ["0.3.3", "0.3.2", "0.3.1"]
+    },
+    {
+      "name": "dsh-context",
+      "title": { "en": "Context", "zh": "上下文" },
+      "description": {
+        "en": "Context insights and management with a dashboard, browser, dynamics and /context command, for understanding how the context is composed and how it evolves.",
+        "zh": "上下文洞察与管理插件：提供跨会话的上下文仪表盘、上下文浏览器、上下文动态、/context 命令，看清上下文的构成与演变。"
+      },
+      "icon": "icons/context.svg",
+      "author": "bowenliang123",
+      "homepage": "https://github.com/bowenliang123/dsh-context",
+      "repository": { "url": "https://github.com/bowenliang123/dsh-context" },
+      "category": "context",
+      "labels": ["web-ui"],
+      "keywords": ["dsh", "context", "token", "dashboard", "ui"],
+      "source": { "type": "npm", "package": "dsh-context" },
+      "versions": ["0.83.0", "0.82.2", "0.82.1", "0.82.0"]
+    }
+  ]
+}
