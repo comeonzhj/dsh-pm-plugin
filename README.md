@@ -1,10 +1,15 @@
 # dsh-pm-plugin
 
+[![Validate market index](https://github.com/comeonzhj/dsh-pm-plugin/actions/workflows/validate.yml/badge.svg)](https://github.com/comeonzhj/dsh-pm-plugin/actions/workflows/validate.yml)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-5eead4)](https://comeonzhj.github.io/dsh-pm-plugin/)
+
 托管在 GitHub Pages 上的 **DeepSeek Harness 插件市场索引**（[`format: 1`](https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market)）。
 
 - 索引地址：<https://comeonzhj.github.io/dsh-pm-plugin/index.json>
 - 索引站：<https://comeonzhj.github.io/dsh-pm-plugin/>
 - 格式文档：[DSH 插件市场](https://deepseek-harness.github.io/deepseek-harness/guide/plugin-market) · 校验器 [`@deepseek-ai/dsh-plugin-market-index`](https://www.npmjs.com/package/@deepseek-ai/dsh-plugin-market-index)
+
+![索引页预览](docs/preview.png)
 
 ## 使用
 

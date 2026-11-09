@@ -560,6 +560,8 @@
               ...labels.map((label) => `<span class="tag">${escape(label)}</span>`),
             ].join('')
             const engines = plugin.versions[0].engines.dsh
+            const repoShort = (plugin.repository?.url ?? '').replace(/^https?:\/\/github\.com\//, '')
+            const sourceLabel = source === 'git' ? `git · ${repoShort}` : 'npm'
             return `
               <article class="card">
                 <div class="card-head">
@@ -574,7 +576,7 @@
                 <div class="card-meta">
                   <div class="row"><span>作者</span><span class="value">${escape(plugin.author ?? '—')}</span></div>
                   <div class="row"><span>版本</span><span class="value">${escape(latest)} · 收录 ${versions.length} 个</span></div>
-                  <div class="row"><span>来源</span><span class="value">${source === 'git' ? 'git · ' + escape(plugin.repository?.url ?? '') : 'npm'}</span></div>
+                  <div class="row"><span>来源</span><span class="value">${escape(sourceLabel)}</span></div>
                   <div class="row"><span>DSH</span><span class="value">${escape(engines)}</span></div>
                 </div>
                 <div class="card-links">
